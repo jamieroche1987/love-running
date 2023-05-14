@@ -1,26 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@1,300&family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald&display=swap');
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     border: none;
 }
 
 body {
-    font-family: lato, sans-serif;
+    font-family: Lato, sans-serif;
     font-weight: 300;
     color: #3a3a3a;
 }
 
-/* heading and logos */
+/* headings and logo */
 
 h1,
 h2 {
-    font-family: oswald, sans sans-serif;
+    font-family: Oswald, sans-serif;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: #252525;
-
 }
 
 #logo {
@@ -57,10 +56,10 @@ h2 {
 }
 
 .active {
-    border-bottom: 1px solid #3a3a3a
+    border-bottom: 1px solid #3a3a3a;
 }
 
-/*hero image and cover text*/
+/* hero image and cover text */
 
 #hero-outer {
     height: 600px;
@@ -72,7 +71,7 @@ h2 {
 
 #cover-text,
 #cover-text h2 {
-    color: #ffffff;
+    color: #fff;
 }
 
 #hero-image {
@@ -80,14 +79,13 @@ h2 {
     width: 100%;
     background: url('../images/hero-image.webp') no-repeat center center;
 
-    /* animates zoom affect when page is loading*/
-
+    /* animates zoom effect on loading page */
     animation-name: hero-zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
 }
 
-/* creates level of zoom for hero image */
+/* creates the level of zoom for hero image */
 @keyframes hero-zoom {
     from {
         transform: scale(1);
@@ -118,32 +116,27 @@ h2 {
     position: absolute;
 }
 
-/* Club ethos */
+/* club ethos */
 
 #club-ethos {
-    height: 600px
+    height: 600px;
 }
 
 #left-about {
     padding-top: 30px;
     width: 33%;
     float: left;
-
-
 }
 
 #right-about {
     padding-top: 30px;
     width: 33%;
     float: right;
-
 }
 
 #center-about {
     width: 33%;
     margin: 0 auto;
-
-
 }
 
 hr {
@@ -158,6 +151,22 @@ hr {
     line-height: 20px;
     clear: both;
     margin-bottom: 50px;
+}
+
+.right-about-heading {
+    width: 60%;
+    float: left;
+    line-height: 20px;
+    clear: both;
+    margin-bottom: 50px;
+}
+
+.right-about-heading h2 {
+    text-align: right;
+}
+
+.right-about-heading p {
+    text-align: right;
 }
 
 #welcome {
@@ -178,20 +187,15 @@ hr {
 }
 
 #circle-cover-bg {
-
     background: url('../images/ethos-center-image.jpg') no-repeat center center;
     height: 100%;
     border-radius: 50%;
-
-
-
 }
 
 /* event times */
 
 #times {
-
-    background-image: url('../images/dublin-city.webp');
+    background-image: url('../images/times-background.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -212,9 +216,8 @@ hr {
 }
 
 #times h2 {
-
     color: #fafafa;
-} 
+}
 
 /* footer */
 
@@ -237,7 +240,7 @@ footer {
     color: #3a3a3a;
 }
 
-/*gallery*/
+/* gallery */
 
 #photos {
     clear: both;
@@ -248,4 +251,91 @@ footer {
 
 #photos>img {
     width: 100%;
+}
+
+/* Media queries */
+
+/* For larger to medium screens size from 1200px wide and down */
+@media screen and (max-width: 1200px) {
+    #club-ethos {
+        width: 65%;
+        height: 1200px;
+        margin: 0 auto;
+    }
+
+    #welcome {
+        padding: 30px 0;
+        margin: 0;
+    }
+
+    #left-about,
+    #right-about {
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    #center-about {
+        clear: both;
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    #times>div {
+        width: 100%;
+        clear: both;
+        height: 150px;
+        padding: 0;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+/* For medium screen sizes from 950px wide and down */
+@media screen and (max-width: 950px) {
+
+    #menu {
+        clear: left;
+        float: left;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        line-height: 25px;
+    }
+
+    #cover-text {
+        left: 0;
+    }
+
+    #club-ethos {
+        width: 90%;
+        height: 1200px;
+        margin: 0 auto;
+    }
+
+    .left-about-heading,
+    .right-about-heading {
+        width: inherit;
+    }
+
+    .left-about-heading h2,
+    .right-about-heading h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .left-about-heading p,
+    .right-about-heading p {
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+/* For small screen sizes below 800px width */
+@media screen and (max-width: 800px) {
+    #photos {
+        column-count: 2;
+    }
 }
